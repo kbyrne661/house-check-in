@@ -1,0 +1,30 @@
+{
+  "name": "house-check-in",
+  "version": "1.0.0",
+  "description": "Web app for checking into the house to aid in contact tracing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kbyrne661/house-check-in.git"
+  },
+  "author": "Kevin Byrne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kbyrne661/house-check-in/issues"
+  },
+  "homepage": "https://github.com/kbyrne661/house-check-in#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

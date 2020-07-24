@@ -1,0 +1,9 @@
+#navbar {
+    background-color: #007A33;
+}
+
+.index-container {
+    display: flex;
+    justify-content: center;
+    margin: 2vh;
+}
