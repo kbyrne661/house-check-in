@@ -11,21 +11,54 @@
 </header>
 
 <main>
+    <!-- <div class="container" style="margin-top: 2vh;">
+        <a href="/" class="btn btn-outline-primary">&lt; Back</a>
+    </div> -->
     <div class="index-container">
-        <h3><%= totalGuests %> Current Guests</h3>
+        <p>Select which brother the guests are at the house with. For non-resident brothers w/o guests, leave the guest fields empty.</p>
     </div>
-    <div class="index-container">
-        <h6>(<%= commonGuests %> in common spaces)</h6>
-    </div>
-    <div class="index-container">
-        <a id="in" class="btn btn-success btn-lg" href="/check-in">Check In</a>
-    </div>
-    <div class="index-container">
-        <a id="out" class="btn btn-danger btn-lg" href="/check-out">Check Out</a>
-    </div>
+    <form class="container" action="/check-in" method="post">
+        <div class="form-group">
+            <label for="brotherSelect"><span style="color: red">*</span> Brother:</label><br>
+            <select class="selectpicker" data-live-search="true" id="brotherSelect" name="brother" onchange="enableSubmit()">
+                <option value="" disabled selected>Select a brother...</option>
+                <% brothers.forEach(brother => { %>
+                    <option><%= brother.last + ', ' + brother.first %></option>
+                <% }) %>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>First Guest:</label>
+            <div class="form-row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Guest first name" name="guest1_first">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Guest last name" name="guest1_last">
+                </div>
+            </div><br>
+            <label>Second Guest:</label>
+            <div class="form-row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Guest first name" name="guest2_first">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Guest last name" name="guest2_last">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success" id="submit-button" disabled>Check In</button>
+        </div>
+      </form>
 </main>
 
 <footer>
+    <script>
+        function enableSubmit() {
+            document.getElementById('submit-button').disabled = false
+        }
+    </script>
     <%- include('../partials/footer.ejs') %>
 </footer>
 

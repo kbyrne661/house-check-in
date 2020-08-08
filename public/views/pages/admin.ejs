@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %>
+</head>
+
+<body>
+
+<header>
+    <%- include('../partials/header.ejs') %>
+</header>
+
+<main>
+    <div class="container" style="margin-top: 2vh;">
+        <a href="/" class="btn btn-outline-primary">&lt; Back</a>
+    </div>
+    <div class="index-container">
+        <h1>Admin Portal</h1>
+    </div>
+    <div class="index-container">
+        <form action="/admin-restart" method="get">
+            <button type="submit" class="btn btn-danger">Restart Web Server</button>
+        </form>
+    </div>
+    
+</main>
+
+<footer>
+    <%- include('../partials/footer.ejs') %>
+</footer>
+
+</body>
+</html>
