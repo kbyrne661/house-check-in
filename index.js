@@ -4,7 +4,6 @@ const admin = require('firebase-admin');
 const path = require('path')
 const app = express()
 const bodyParser = require('body-parser');
-const port = 3000
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'public/views'))
@@ -12,7 +11,6 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const serviceAccount = require('./house-check-in-firebase-adminsdk-47eql-4a82ecca03.json');
-const { exit } = require('process');
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
@@ -34,7 +32,7 @@ app.get('/', (req, res) => {
     })
 });
 
-app.post('/check-in', (req, res) => {
+app.post('/', (req, res) => {
     const b_last = req.body.brother.split(', ')[0]
     const b_first = req.body.brother.split(', ')[1]
     db.collection('check-ins').add({
@@ -69,10 +67,4 @@ app.get('/admin', (req, res) => {
     res.render('pages/admin')
 })
 
-app.get('/admin-restart', (req, res) => {
-    exit()
-})
-
-app.listen(port, () => {
-    console.log('Listening on port 3000')
-})
+module.exports = app

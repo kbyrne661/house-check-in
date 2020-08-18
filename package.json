@@ -4,12 +4,9 @@
   "description": "Web app for checking into the house to aid in contact tracing",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js",
-    "start": "forever start index.js -w -f",
-    "stop": "forever stopall",
-    "log": "forever logs index.js",
-    "populate": "node populate.js"
+    "local": "nodemon local.js",
+    "populate": "node populate.js",
+    "deploy": "serverless deploy"
   },
   "repository": {
     "type": "git",
@@ -22,6 +19,7 @@
   },
   "homepage": "https://github.com/kbyrne661/house-check-in#readme",
   "dependencies": {
+    "aws-serverless-express": "^3.3.8",
     "body-parser": "^1.19.0",
     "csv-parser": "^2.3.3",
     "dotenv": "^8.2.0",
@@ -32,7 +30,7 @@
     "request": "^2.88.2"
   },
   "devDependencies": {
-    "forever": "^3.0.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "serverless": "^1.78.1"
   }
 }

@@ -2,3 +2,4 @@ secrets.env
 /node_modules
 .DS_Store
 house-check-in-firebase-adminsdk-47eql-4a82ecca03.json
+/.serverless
