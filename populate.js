@@ -9,7 +9,7 @@ admin.initializeApp({
 const db = admin.firestore();
 const batch = db.batch()
 
-fs.createReadStream('brothers.csv')
+fs.createReadStream('pledges.csv')
   .pipe(csv())
   .on('data', (row) => {
     const ref = db.collection('brothers').doc();

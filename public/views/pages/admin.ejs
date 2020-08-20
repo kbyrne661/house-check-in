@@ -15,8 +15,42 @@
         <a href="/" class="btn btn-outline-primary">&lt; Back</a>
     </div>
     <div class="index-container">
-        <h1>You shouldn't be here</h1>
+        <h1>Admin</h1>
     </div>
+    <form class="container" action="/admin" method="post">
+        <div class="form-group">
+            <label for="personSelect">Choose who tested positive:</label><br>
+            <select class="selectpicker" data-live-search="true" id="personSelect" name="person">
+                <option value="" disabled selected>Select someone...</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col">
+                    <label>Start Date:</label>
+                    <div class="input-group date" data-provide="datepicker">
+                        <input type="text" class="form-control">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <label>End Date:</label>
+                    <div class="input-group date" data-provide="datepicker">
+                        <input type="text" class="form-control">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success" id="submit-button">Submit</button>
+        </div>
+      </form>
+    <script>$('.datepicker').datepicker()</script>
 </main>
 
 <footer>
